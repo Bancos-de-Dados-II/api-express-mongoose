@@ -2,6 +2,21 @@ const { response } = require('express');
 const res = require('express/lib/response');
 const Pessoa = require('../models/pessoa');
 
+const buscarPessoa = async (request, response) =>{
+    const email = request.params.email;
+
+    const pessoa = await Pessoa.findOne({where:{
+        email:email
+    }});
+
+    if(pessoa == null){
+        response.status(200).send('Usuário não encontrado');
+    }else{
+        response.status(200).send(pessoa);
+    }
+
+};
+
 const getPessoas = async (request, response)=>{
     const pessoas = await Pessoa.findAll();
     response.status(200).send(pessoas);
@@ -63,4 +78,4 @@ const sincronizar = async(request, response) =>{
     response.status(200).send('Sincronizado');
 }
 
-module.exports = {getPessoas, addPessoa, sincronizar, deletarPessoa, atualizarPessoa};
+module.exports = {getPessoas, addPessoa, sincronizar, deletarPessoa, atualizarPessoa, buscarPessoa};

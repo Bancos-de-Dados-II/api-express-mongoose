@@ -8,11 +8,13 @@ app.get('/', pessoaController.sincronizar);
 
 app.get('/pessoas', pessoaController.getPessoas);
 
+app.get('/pessoas/:email', pessoaController.buscarPessoa);
+
 app.post('/pessoas', pessoaController.addPessoa);
 
-app.delete('/pessoa/:email', pessoaController.deletarPessoa);
+app.delete('/pessoas/:email', pessoaController.deletarPessoa);
 
-app.put('/pessoa', pessoaController.atualizarPessoa);
+app.put('/pessoas', pessoaController.atualizarPessoa);
 
 app.listen(process.env.API_PORT, ()=>{
     console.log(`API rodando na porta ${process.env.API_PORT}`);
