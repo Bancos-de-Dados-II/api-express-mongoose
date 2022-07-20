@@ -1,6 +1,6 @@
 # api-express-sequelize
 
-Exemplo de API REST, com express e sequelize apresentado na disciplina de Bancos de Dados II, do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, do IFPB/campus Cajazeiras
+Exemplo de API REST, com express e mongoose apresentado na disciplina de Bancos de Dados II, do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, do IFPB/campus Cajazeiras
 
 ## Inicialização
 Para inicializar a API vocês deverão:
@@ -9,12 +9,10 @@ Para inicializar a API vocês deverão:
 
 Exemplo do arquivo .env (trocar os valores das chaves pelos dados do seu banco):
 ```
-PG_HOST = localhost
-PG_PORT = 5432
-PG_USERNAME = postgres
-PG_PASSWORD = postgres
-PG_DATABASE = teste
-API_PORT = 3000
+MONGO_HOST = localhost
+MONGO_PORT = 27017
+MONGO_DATABASE = aula
+API_PORT = 3001
 ```
 
 3. ```npm i```
