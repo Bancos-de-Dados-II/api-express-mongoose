@@ -1,21 +1,10 @@
-const Sequelize = require('sequelize');
-const database = require('../database/db');
+const mongoose = require('../database/db');
 
-const Pessoa = database.define('pessoa',{
-    id:{
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
-    },
-    nome:{
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    email:{
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-    }
+const pessoaSchema = new mongoose.Schema({
+    nome: String,
+    email: {type: String, unique: true}
 });
+
+const Pessoa = mongoose.model('pessoa', pessoaSchema);
 
 module.exports = Pessoa;

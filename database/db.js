@@ -1,11 +1,11 @@
 require('dotenv').config();
 
-const { Sequelize, DataTypes } = require('sequelize');
+const mongoose = require('mongoose');
 
-const sequelize = new Sequelize(process.env.PG_DATABASE, process.env.PG_USERNAME, process.env.PG_PASSWORD, {
-  host: process.env.PG_HOST,
-  port: process.env.PG_PORT,
-  dialect: 'postgres'
-});
+main().catch(err => console.log(err));
 
-module.exports = sequelize;
+async function main() {
+  await mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`);
+}
+
+module.exports = mongoose;

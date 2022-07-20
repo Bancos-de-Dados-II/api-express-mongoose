@@ -4,8 +4,6 @@ const app = express();
 app.use(express.json());
 const pessoaController = require('./controllers/PessoaController');
 
-app.get('/', pessoaController.sincronizar);
-
 app.get('/pessoas', pessoaController.getPessoas);
 
 app.get('/pessoas/:email', pessoaController.buscarPessoa);
