@@ -9,10 +9,10 @@ Para inicializar a API vocês deverão:
 
 Exemplo do arquivo .env (trocar os valores das chaves pelos dados do seu banco):
 ```
-MONGO_HOST = localhost
-MONGO_PORT = 27017
-MONGO_DATABASE = aula
-API_PORT = 3001
+ATLAS_HOST = O host do seu cluster
+MONGO_USER = Seu usuário no Atlas
+MONGO_PASSWORD = Sua senha
+API_PORT = 3000
 ```
 
 3. ```npm i```
